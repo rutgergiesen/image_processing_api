@@ -7,7 +7,9 @@
     "lint": "eslint 'index.js'",
     "prettier": "prettier --config .prettierrc 'src/**/*.js' --write",
     "build": "npx tsc",
-    "test": "test"
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine",
+    "start": "nodemon src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -24,14 +26,23 @@
   },
   "homepage": "https://github.com/rutgergiesen/image_processing_api#readme",
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jasmine": "^5.1.4",
     "@types/node": "^20.14.5",
+    "@types/supertest": "^6.0.2",
     "eslint": "^9.5.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "express": "^4.19.2",
     "jasmine": "^5.1.0",
+    "nodemon": "^3.1.3",
     "prettier": "^3.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "jasmine-spec-reporter": "^7.0.0",
+    "sharp": "^0.33.4",
+    "supertest": "^7.0.0"
   }
 }
